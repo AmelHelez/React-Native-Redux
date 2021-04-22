@@ -1,25 +1,27 @@
 import React, { useLayoutEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import { useSelector } from 'react-redux';
 
 const ItemDetailScreen = ({navigation, route}) => {
     const item = useSelector(state => state.items.fruits);
-    const itemDetail = item.find((fruit) => fruit.id === route.params.itemId);
-
+    const itemId = item.find((fruit) => fruit.id === route.params.itemId);
 
       useLayoutEffect(() => {
         navigation.setOptions({
-            title: itemDetail.name,
+            title: itemId.name,
             headerBackTitle: "Items",
         })
       }, [navigation]);
 
-    console.log(itemDetail);
+    console.log(itemId);
     return (
         <View style={styles.container}>
-            <Text style={styles.text}> {itemDetail.id} </Text>
-            <Text style={styles.text}> {itemDetail.name} </Text>
-            <Text style={{color: itemDetail.color, fontSize: 25}} > {itemDetail.color}</Text>
+            <Text style={styles.text}> Item ID: {itemId.id} </Text>
+            <Text style={styles.text}> Item Name: {itemId.name} </Text>
+            <Text style={{ fontSize: 25}} > Item color: {itemId.color}</Text>
+            <View style={{marginTop: 14}}></View>
+            <Button title="Go back" color="black"
+            onPress={() => navigation.goBack()} />
         </View>
     );
 }

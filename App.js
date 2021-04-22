@@ -1,17 +1,13 @@
 import "react-native-gesture-handler";
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import LoginScreen from "./midterm-screens/LoginScreen";
-import ItemsScreen from "./midterm-screens/ItemsScreen";
+import LoginScreen from "./screens/LoginScreen";
 import { store } from "./itemsSlice";
 import { Provider } from "react-redux";
-import ItemDetailScreen from "./midterm-screens/ItemDetailScreen";
-import Fruits from "./midterm-screens/Fruits";
+import Fruits from "./screens/Fruits";
 
-//import { store } from "./namesSlice";
 
 const Tab = createBottomTabNavigator();
 

@@ -1,9 +1,9 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
+import Cart from './Cart'
 import ItemDetailScreen from './ItemDetailScreen'
 import ItemsScreen from './ItemsScreen'
-import LoginScreen from './LoginScreen'
 
 const Stack = createStackNavigator();
 
@@ -12,6 +12,7 @@ const Fruits = () => {
         <Stack.Navigator>
       <Stack.Screen name="Items" component={ItemsScreen} />
      <Stack.Screen name="Details" component={ItemDetailScreen} />
+     <Stack.Screen name="Cart" component={Cart} />
     </Stack.Navigator>
     )
 }
